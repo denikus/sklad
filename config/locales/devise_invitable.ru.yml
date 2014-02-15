@@ -1,0 +1,17 @@
+ru:
+  devise:
+    invitations:
+      send_instructions: 'Пригласительный email был выслан на адрес %{email}.'
+      invitation_token_invalid: 'Пригласительный код неверный!'
+      updated: 'Ваш пароль был успешно установлен. Вы вошли.'
+      no_invitations_remaining: "Нет приглашений"
+      invitation_removed: 'Ваше приглашение было удалено.'
+      new:
+        header: "Отправление приглашения"
+        submit_button: "Отправить приглашение"
+      edit:
+        header: "Установите пароль"
+        submit_button: "Установить мой пароль"
+    mailer:
+      invitation_instructions:
+        subject: 'Инструкции по приглашению'

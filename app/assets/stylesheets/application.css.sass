@@ -8,6 +8,29 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require_tree .
+ *= require_self
  */
+$grey-bg: #fafafa
+$selected-bg: #EEF1F2
+
+main
+  background-color: #fff
+
+.container.row
+  max-width: 80rem
+  padding: 15px 0
+
+.categories
+  background-color: $grey-bg
+  a
+    display: block
+    margin-bottom: 5px
+    padding: 3px
+  a:hover, a:active
+    background-color: $selected-bg
+  a:first-child
+    margin-top: 15px
+    font-weight: bold
+
+

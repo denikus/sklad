@@ -1,0 +1,10 @@
+.container.row
+  .sidebar.large-3.columns.categories
+    - for category in @categories
+        a.first-level href="?category_id=#{category.id}" = category.name
+        - for subcategory in category.children
+          a href="?category_id=#{subcategory.id}" style="margin-left: 15px; display:block;" = subcategory.name
+  .content.large-9.columns
+    = "products"
+
+

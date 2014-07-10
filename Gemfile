@@ -47,9 +47,17 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'awesome_print'
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
 end
+
+group :production do
+  #need this for js compiling
+  gem 'execjs'
+  gem 'therubyracer'
+end
+
 

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.0'
+ruby '2.1.2'
 gem 'rails', '4.0.2'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
@@ -18,6 +18,16 @@ gem 'nokogiri'
 #for categories
 gem 'ancestry'
 
+gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+gem 'pry-byebug'
+
+
+# Deploy with Capistrano
+gem 'capistrano',  '~> 3.1'
+gem 'capistrano-rails', '~> 1.1'
+gem 'capistrano-rvm', github: 'capistrano/rvm'
+
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
@@ -35,7 +45,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'passenger'
   gem 'rspec-rails'
-  gem 'jazz_hands'
   gem 'awesome_print'
 end
 group :test do
@@ -43,3 +52,4 @@ group :test do
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
 end
+

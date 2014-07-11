@@ -27,6 +27,8 @@ gem 'capistrano',  '~> 3.1'
 gem 'capistrano-rails', '~> 1.1'
 gem 'capistrano-rvm', github: 'capistrano/rvm'
 
+gem 'newrelic_rpm'
+
 
 group :development do
   gem 'better_errors'

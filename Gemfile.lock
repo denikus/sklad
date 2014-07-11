@@ -178,6 +178,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
+    newrelic_rpm (3.9.0.229)
     nio4r (1.0.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
@@ -329,6 +330,7 @@ DEPENDENCIES
   jazz_hands!
   jbuilder (~> 1.2)
   jquery-rails
+  newrelic_rpm
   nokogiri
   passenger
   pg

@@ -7,7 +7,7 @@ set :repo_url, 'git@github.com:denikus/sklad.git'
 
 # output format
 set :format, :pretty
-set :log_level, :info #:debug
+set :log_level, :debug #:debug
 
 # Default value for :linked_files is []
 set :linked_files, %w{config/database.yml config/application.yml}

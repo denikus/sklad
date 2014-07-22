@@ -29,6 +29,8 @@ gem 'capistrano-rvm', github: 'capistrano/rvm'
 
 gem 'newrelic_rpm'
 
+gem 'rollbar'
+
 
 group :development do
   gem 'better_errors'

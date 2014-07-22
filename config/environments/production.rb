@@ -78,7 +78,7 @@ Sklad::Application.configure do
       authentication: "plain",
       user_name: ENV["SMTP_USERNAME"],
       password: ENV["SMTP_PASSWORD"],
-      enable_starttls_auto: false
+      enable_starttls_auto: true
     # address: "smtp.gmail.com",
     # port: 587,
     # domain: ENV["DOMAIN_NAME"],
@@ -91,7 +91,7 @@ Sklad::Application.configure do
   config.action_mailer.default_url_options = { :host => 'sklad.treniki.com.ua' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
 
   # Disable automatic flushing of the log to improve performance.

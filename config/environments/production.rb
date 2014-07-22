@@ -78,7 +78,7 @@ Sklad::Application.configure do
       authentication: "plain",
       user_name: ENV["SMTP_USERNAME"],
       password: ENV["SMTP_PASSWORD"],
-      enable_starttls_auto: true
+      enable_starttls_auto: false
     # address: "smtp.gmail.com",
     # port: 587,
     # domain: ENV["DOMAIN_NAME"],

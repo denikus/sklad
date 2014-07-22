@@ -75,8 +75,9 @@ Sklad::Application.configure do
   config.action_mailer.smtp_settings = {
       address: ENV["SMTP_SERVER"],
       port: ENV["SMTP_PORT"],
-      authentication: "plain",
+      authentication: :plain,
       user_name: ENV["SMTP_USERNAME"],
+      domain: ENV["SMTP_DOMAIN"],
       password: ENV["SMTP_PASSWORD"],
       enable_starttls_auto: false
     # address: "smtp.gmail.com",

@@ -5,14 +5,19 @@ html
     title
       = content_for?(:title) ? yield(:title) : 'Sklad'
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Sklad'}"
+    meta charset="UTF-8"
     == stylesheet_link_tag "application", :media => "all"
-    / Modernizr is required for Zurb Foundation
-    == javascript_include_tag "vendor/modernizr"
     == javascript_include_tag "application"
     == csrf_meta_tags
   body
-    header
-      == render 'layouts/navigation'
-    main[role="main"]
-      == render 'layouts/messages'
-      == yield
+    == render 'layouts/header'
+    #page-wrapper.container
+      .row
+        #content-wrapper
+          .row
+            .col-lg-12
+              == yield
+          footer#footer-bar.row
+            p#footer-copyright.col-xs-12
+              Copyright &copy; #{Time.now.year} Sklad.
+

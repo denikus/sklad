@@ -1,20 +1,29 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
-gem 'rails', '4.0.2'
+
+gem 'rails', '4.1.8'
+
 gem 'pg'
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
+
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 2.0'
+
 gem 'devise'
 gem 'devise_invitable'
+
+gem 'sdoc', '~> 0.4.0',          group: :doc
+
 gem 'figaro'
-gem 'foundation-rails'
+
+# gem 'foundation-rails'
+
 gem 'slim-rails'
 
 #for parsing XML
 gem 'nokogiri'
+
 #for categories
 gem 'ancestry'
 
@@ -27,9 +36,13 @@ gem 'capistrano',  '~> 3.1'
 gem 'capistrano-rails', '~> 1.1'
 gem 'capistrano-rvm', github: 'capistrano/rvm'
 
-gem 'newrelic_rpm'
-
 gem 'rollbar'
+
+gem 'font-awesome-sass', '= 4.2.0'
+
+#nice and simple forms
+gem 'simple_form'
+
 
 
 group :development do
@@ -43,6 +56,12 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
+
+  #show badd styles of ruby code
+  gem 'rubocop', require: false
+
+  #view emails instead of sending
+  gem "letter_opener"
 end
 
 group :development, :test do

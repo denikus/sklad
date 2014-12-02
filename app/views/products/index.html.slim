@@ -1,21 +1,47 @@
-.container.row
-  .sidebar.large-3.columns.categories
-    - for category in @categories
-        a.first-level href="?category_id=#{category.id}" class=(params[:category_id].to_s == category.id.to_s ? 'active' : 'passive') = category.name
-        - for subcategory in category.children
-          a.second-level href="?category_id=#{subcategory.id}" class=(params[:category_id].to_s == subcategory.id.to_s ? 'active' : 'passive') = subcategory.name
-  .content.large-9.columns
+.row
+  / sidebar
+  .col-lg-3
+    .main-box.no-header.sidebar.clearfix
+      .row
+        .col-lg-9
+          - for category in @categories
+            div.first-level
+              a.first-level href="?category_id=#{category.id}" class=(params[:category_id].to_s == category.id.to_s ? 'active' : 'passive') = category.name
+              - for subcategory in category.children
+                .row.second-level
+                  .col-lg-12
+                    a.second-level href="?category_id=#{subcategory.id}" class=(params[:category_id].to_s == subcategory.id.to_s ? 'active' : 'passive') = subcategory.name
+  / content
+  .col-lg-9
     - if @products.present?
-      table
-        thead
-          tr
-            th= "Название"
-        tbody
-          - @products.each do |product|
-            tr
-              td= product.name
+      .main-box.no-header.clearfix
+        .main-box-body.clearfix
+          .table-responsive
+            table.table.user-list
+              thead
+                tr
+                  th
+                    span Название
+              tbody
+                - @products.each do |item|
+                  tr
+                    td
+                      = item.name
 
 
-/#{((params[:category_id] == category.id) ? 'active first-level' : 'first-level' )}
-
-
+/.container.row
+/  .sidebar.large-3.columns.categories
+/    - for category in @categories
+/        a.first-level href="?category_id=#{category.id}" class=(params[:category_id].to_s == category.id.to_s ? 'active' : 'passive') = category.name
+/        - for subcategory in category.children
+/          a.second-level href="?category_id=#{subcategory.id}" class=(params[:category_id].to_s == subcategory.id.to_s ? 'active' : 'passive') = subcategory.name
+/  .content.large-9.columns
+/    - if @products.present?
+/      table
+/        thead
+/          tr
+/            th= "Название"
+/        tbody
+/          - @products.each do |product|
+/            tr
+/              td= product.name

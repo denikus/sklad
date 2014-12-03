@@ -43,7 +43,8 @@ gem 'font-awesome-sass', '= 4.2.0'
 #nice and simple forms
 gem 'simple_form'
 
-
+# notifications
+gem 'bootstrap-growl-rails'
 
 group :development do
   gem 'better_errors'

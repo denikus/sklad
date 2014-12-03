@@ -1,0 +1,10 @@
+= simple_form_for @option, :html => { role: "form" }, defaults: { input_html: { class: 'form-control' } } do |f|
+  .row
+    .form-group.col-xs-4
+      = f.input :name
+  .row
+    .form-group.col-xs-4
+      = f.input :url
+  .row
+    .form-group.col-xs-10
+      =f.button :submit, "Save", class: "btn-success"

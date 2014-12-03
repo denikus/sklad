@@ -1,0 +1,32 @@
+.row
+  .col-lg-12
+    ol.breadcrumb
+      li
+        =link_to 'Главная', root_path
+      li.active
+        span Модификации
+    .clearfix
+      h1.pull-left Модификации
+      .pull-right.top-page-ui
+        =link_to new_option_path, class: 'btn btn-primary pull-right' do
+          i.fa.fa-plus-circle.fa-lg
+          |  Добавить
+
+
+.row
+  .col-lg-12
+    .main-box.no-header.clearfix
+      .main-box-body.clearfix
+        .table-responsive
+          table.table.user-list
+            thead
+              tr
+                th
+                  span Название
+                  th &nbsp;
+            tbody
+              - unless @options.empty?
+                - @options.each do |item|
+                  tr
+                    td
+                      = item.name

@@ -1,7 +1,21 @@
 .row
+  .col-lg-12
+    ol.breadcrumb
+      li
+        =link_to 'Главная', root_path
+      li
+        =link_to 'Товары', products_path
+      - unless @category.nil?
+        li.active
+          span= @category.name
+    - unless @category.nil?
+      .clearfix
+        h1.pull-left= @category.name
+
+.row
   / sidebar
   .col-lg-3
-    .main-box.no-header.sidebar.clearfix
+    .main-box.no-header.products-sidebar.clearfix
       .row
         .col-lg-9
           - for category in @categories
@@ -10,7 +24,8 @@
               - for subcategory in category.children
                 .row.second-level
                   .col-lg-12
-                    a.second-level href="?category_id=#{subcategory.id}" class=(params[:category_id].to_s == subcategory.id.to_s ? 'active' : 'passive') = subcategory.name
+                    a.second-level href="?category_id=#{subcategory.id}" class="#{(params[:category_id].to_s == subcategory.id.to_s ? 'active' : 'passive')}" = subcategory.name
+
   / content
   .col-lg-9
     - if @products.present?

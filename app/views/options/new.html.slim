@@ -1,0 +1,15 @@
+.row
+  .col-lg-12
+    ol.breadcrumb
+      li
+        =link_to 'Главная', root_path
+      li.active
+        =link_to 'Модификации', options_path
+
+.row
+  .col-lg-12
+    .main-box.clearfix
+      header.main-box-header.clearfix
+        h2 Новая модификация
+      .main-box-body.clearfix
+        = render 'form'

@@ -3,7 +3,8 @@ class ProductsController < ApplicationController
     @categories = Category.where(ancestry: nil)
 
     if params[:category_id].present?
-      ap @products = Product.where(:category_id => params[:category_id]).all
+      @products = Product.where(:category_id => params[:category_id]).all
+      @category = Category.find(params[:category_id])
     end
   end
 end

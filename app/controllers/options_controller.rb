@@ -11,7 +11,8 @@ class OptionsController < ApplicationController
     @option = Option.new(option_params)
 
     if @option.save
-      redirect_to options_path, :notice => 'Новая модификация успешно создана!'
+      flash[:success] = 'Новая модификация успешно создана!'
+      redirect_to options_path
     else
       render :action => "new"
     end

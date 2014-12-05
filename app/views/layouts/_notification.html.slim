@@ -1,7 +1,7 @@
 - if !flash.blank?
   javascript:
     $(document).ready(function () {
-      flash = "test";
+      flash = #{flash.to_json.html_safe};
       _.each(flash, function(item) {
         $.growl({message: item[1]},
           {type: item[0],

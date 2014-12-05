@@ -23,11 +23,6 @@ class OptionsController < ApplicationController
   end
 
   def update
-    # unless params[:option][:user_id].blank?
-    #   user = User.find(params[:business_trip][:user_id])
-    #   params[:business_trip][:from_city_id] = user.city.id
-    # end
-
     @option = Option.find(params[:id])
 
     if @option.update(option_params)

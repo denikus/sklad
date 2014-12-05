@@ -3,12 +3,14 @@
     ol.breadcrumb
       li
         =link_to 'Главная', root_path
+      li
+        =link_to 'Модификации', options_path
       li.active
-        span Модификации
+        span= "Значения для \"#{@option.name}\""
     .clearfix
-      h1.pull-left Модификации
+      h1.pull-left= "Значения для \"#{@option.name}\""
       .pull-right.top-page-ui
-        =link_to new_option_path, class: 'btn btn-primary pull-right' do
+        =link_to new_option_option_value_path, class: 'btn btn-primary pull-right' do
           i.fa.fa-plus-circle.fa-lg
           |  Добавить
 
@@ -25,21 +27,17 @@
                   span Название
                   th &nbsp;
             tbody
-              - unless @options.empty?
-                - @options.each do |item|
+              - unless @option_values.empty?
+                - @option_values.each do |item|
                   tr
                     td
                       = item.name
                     td style="width: 20%;"
-                      =link_to edit_option_path(item), class: 'table-link', title: 'Редактировать' do
+                      =link_to edit_option_option_value_path(item.option.id, item.id), class: 'table-link', title: 'Редактировать' do
                         span.fa-stack
                           i.fa.fa-square.fa-stack-2x
                           i.fa.fa-pencil.fa-stack-1x.fa-inverse
-                      =link_to option_option_values_path(item), class: 'table-link', title: 'Значения' do
-                        span.fa-stack
-                          i.fa.fa-square.fa-stack-2x
-                          i.fa.fa-list.fa-stack-1x.fa-inverse
-                      =link_to option_path(item), :'data-confirm' => 'Уверены?', method: :delete, class: 'table-link danger', title: 'Удалить' do
+                      =link_to option_option_value_path(item.option, item), :'data-confirm' => 'Уверены?', method: :delete, class: 'table-link danger', title: 'Удалить' do
                         span.fa-stack
                           i.fa.fa-square.fa-stack-2x
                           i.fa.fa-trash-o.fa-stack-1x.fa-inverse

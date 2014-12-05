@@ -1,0 +1,18 @@
+.row
+  .col-lg-12
+    ol.breadcrumb
+      li
+        =link_to 'Главная', root_path
+      li
+        =link_to 'Модификации', options_path
+      li
+        =link_to "Значения для \"#{@option_value.option.name}\"", option_option_values_path(@option_value.option)
+      li
+        span= "Редактировать значение для \"#{@option_value.option.name}\""
+.row
+  .col-lg-12
+    .main-box.clearfix
+      header.main-box-header.clearfix
+        h2= "Редактировать значение для \"#{@option_value.option.name}\""
+      .main-box-body.clearfix
+        = render 'form'

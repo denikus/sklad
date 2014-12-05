@@ -3,6 +3,8 @@ Sklad::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users
   resources :products
-  resources :options
+  resources :options do
+    resources :option_values
+  end
   resources :import
 end

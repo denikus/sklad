@@ -30,3 +30,12 @@
                   tr
                     td
                       = item.name
+                    td style="width: 20%;"
+                      =link_to edit_option_path(item), class: "table-link" do
+                        span.fa-stack
+                          i.fa.fa-square.fa-stack-2x
+                          i.fa.fa-pencil.fa-stack-1x.fa-inverse
+                      =link_to option_path(item), :'data-confirm' => 'Уверены?', method: :delete, class: "table-link danger" do
+                        span.fa-stack
+                          i.fa.fa-square.fa-stack-2x
+                          i.fa.fa-trash-o.fa-stack-1x.fa-inverse

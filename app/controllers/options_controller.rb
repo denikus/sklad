@@ -7,6 +7,10 @@ class OptionsController < ApplicationController
     @option = Option.new
   end
 
+  def edit
+    @option = Option.find(params[:id])
+  end
+
   def create
     @option = Option.new(option_params)
 
@@ -16,6 +20,32 @@ class OptionsController < ApplicationController
     else
       render :action => "new"
     end
+  end
+
+  def update
+    # unless params[:option][:user_id].blank?
+    #   user = User.find(params[:business_trip][:user_id])
+    #   params[:business_trip][:from_city_id] = user.city.id
+    # end
+
+    @option = Option.find(params[:id])
+
+    if @option.update(option_params)
+      flash[:success] = 'Модификация успешно обновлена!'
+      redirect_to options_path
+    else
+      render 'edit'
+    end
+
+  end
+
+  def destroy
+    @option = Option.find(params[:id])
+    @option.destroy
+
+    flash[:success] = "Модификация успешно удалена!"
+
+    redirect_to(options_path)
   end
 
   private
